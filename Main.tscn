@@ -1,0 +1,216 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://rotate.gd" type="Script" id=1]
+[ext_resource path="res://Main.gd" type="Script" id=2]
+
+[sub_resource type="PrismMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_color = Color( 1, 0.215686, 0.215686, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.054902, 0.717647, 0.0823529, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.145098, 0.509804, 0.72549, 1 )
+
+[node name="Main" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="Direct" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Direct"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -0.410128, 0, 1, -1.79273e-08, 0, 0, 1.43858 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Direct"]
+transform = Transform( 0.36975, 0, 0, 0, 0.301528, 0, 0, 0, 1.3304, 0, 0, -0.407867 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 2 )
+
+[node name="Constant" type="Spatial" parent="."]
+script = ExtResource( 1 )
+mode = 1
+
+[node name="MeshInstance" type="MeshInstance" parent="Constant"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -0.410128, 0, 1, -1.79273e-08, 0, 0, 1.43858 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 4 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Constant"]
+transform = Transform( 0.36975, 0, 0, 0, 0.301528, 0, 0, 0, 1.3304, 0, 0, -0.407867 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 4 )
+
+[node name="Smooth" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 0, 0 )
+script = ExtResource( 1 )
+mode = 2
+
+[node name="MeshInstance" type="MeshInstance" parent="Smooth"]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -0.410128, 0, 1, -1.79273e-08, 0, 0, 1.43858 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 5 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="Smooth"]
+transform = Transform( 0.36975, 0, 0, 0, 0.301528, 0, 0, 0, 1.3304, 0, 0, -0.407867 )
+mesh = SubResource( 3 )
+material/0 = SubResource( 5 )
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( -0.199678, -0.670383, 0.714643, 0.930684, 0.0983952, 0.352344, -0.306523, 0.735462, 0.604267, 0, -7.10405, 0 )
+
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( -1, 8.05804e-08, -1.27697e-07, -1.5744e-08, 0.785447, 0.61893, 1.50173e-07, 0.61893, -0.785447, -1.00723e-06, 9.30694, -8.10295 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="ColorRect" parent="Control"]
+margin_left = 661.582
+margin_top = 162.564
+margin_right = 716.582
+margin_bottom = 212.564
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Up"]
+margin_right = 55.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Up"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="ColorRect" parent="Control"]
+margin_left = 661.582
+margin_top = 224.564
+margin_right = 716.582
+margin_bottom = 274.564
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Down"]
+margin_right = 55.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Down"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Left" type="ColorRect" parent="Control"]
+margin_left = 585.582
+margin_top = 224.564
+margin_right = 640.582
+margin_bottom = 274.564
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Left"]
+margin_right = 55.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Left"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Right" type="ColorRect" parent="Control"]
+margin_left = 731.582
+margin_top = 224.564
+margin_right = 786.582
+margin_bottom = 274.564
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Right"]
+margin_right = 55.0
+margin_bottom = 50.0
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Right"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Direct" type="ColorRect" parent="Control"]
+margin_left = 275.998
+margin_top = 228.582
+margin_right = 297.999
+margin_bottom = 250.582
+color = Color( 1, 0.215686, 0.215686, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Direct"]
+margin_left = 37.5871
+margin_top = 3.99629
+margin_right = 82.5871
+margin_bottom = 17.9963
+text = "DIRECT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Constant" type="ColorRect" parent="Control"]
+margin_left = 275.998
+margin_top = 260.895
+margin_right = 297.999
+margin_bottom = 282.895
+color = Color( 0.054902, 0.717647, 0.0823529, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Constant"]
+margin_left = 38.0
+margin_top = 4.0
+margin_right = 107.0
+margin_bottom = 18.0
+text = "CONSTANT"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Smooth" type="ColorRect" parent="Control"]
+margin_left = 275.998
+margin_top = 297.447
+margin_right = 297.999
+margin_bottom = 319.447
+color = Color( 0.145098, 0.509804, 0.72549, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Smooth"]
+margin_left = 38.0
+margin_top = 4.0
+margin_right = 96.0
+margin_bottom = 18.0
+text = "SMOOTH"
+__meta__ = {
+"_edit_use_anchors_": false
+}
