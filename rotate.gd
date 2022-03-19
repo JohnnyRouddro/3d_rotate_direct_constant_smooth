@@ -28,5 +28,5 @@ func _physics_process(delta):
 		if(rad2deg(ang) <= 179): # Creating a threshold otherwise there is a slight vibration
 			rotate_y(ROTATION_SPEED*delta*s)
 			
-	elif mode == SMOOTH_SPEED:
+	elif mode == MODE_SMOOTH:
 		rotation.y = lerp_angle(rotation.y, atan2(-direction.x, -direction.z), delta * SMOOTH_SPEED)
